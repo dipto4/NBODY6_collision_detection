@@ -1,0 +1,60 @@
+./check_tlist.f:31:C      DO L = 1, NXTLEN
+./check_tlist.f:38:C     &           'NXTLEVEL',NXTLEVEL,'NXTLEN',NXTLEN,'I_NXTLST',L,
+./check_tlist.f:56:C      DO L = NXTLEN+1,NXTLIMIT
+./check_tlist.f:62:C     &           'NXTLEVEL',NXTLEVEL,'NXTLEN',NXTLEN,'I_NXTLST',L
+./custom_output.F:1:      subroutine custom_output(NXTLEN,NXTLST,NXTLIMIT,NGHOSTS)
+./custom_output.F:152:      NLOOP = NXTLEN
+./custom_output.F:173:c$$$         IF (NXTLEN.GT.60.and.TTOT.NE.0.D0) THEN
+./custom_output.F:194:c$$$            IF (J.GE.NXTLEN) call abort()
+./custom_output.F:735:      if (NXTLEN.eq.NXTLIMIT.or.TTOT.eq.0.D0) then
+./encounter_record.f:1:      SUBROUTINE ENCOUNTER_RECORD(NXTLEN,NXTLST)
+./encounter_record.f:12:      INTEGER NXTLEN, NXTLST(NMAX)
+./encounter_record.f:19:      DO II = 1, NXTLEN
+./intgrt.F:141:               CALL custom_output(NXTLEN,NXTLST,
+./intgrt.F:145:                  call star_trace(NXTLEN,NXTLST)
+./intgrt.F:235:*     Determine NXTLEN, TMIN and NXTLEVEL
+./intgrt.F:241:      DO L = 1, NXTLEN
+./intgrt.F:248:     &           'NXTLEVEL',NXTLEVEL,'NXTLEN',NXTLEN,'I_NXTLST',L,
+./intgrt.F:267:      DO L = NXTLEN+1,NXTLIMIT
+./intgrt.F:273:     &           'NXTLEVEL',NXTLEVEL,'NXTLEN',NXTLEN,'I_NXTLST',L
+./intgrt.F:284:      DO L = 1, NXTLEN
+./intgrt.F:300:      LSKIP = NXTLEN 
+./intgrt.F:303:          CALL SHORT(NXTLEN,NXTLST,LSHORT)
+./intgrt.F:418:c$$$             WRITE (6,24)  TIME, I, NAME(I), NXTLEN, NSTEPI,
+./intgrt.F:477:      IF(KZ(33).GT.0)JHIST(NXTLEN) = JHIST(NXTLEN) + 1
+./intgrt.F:483:        do L=1,NXTLEN
+./intgrt.F:486:              write(100+rank,*) 'NXTLEN',NXTLEN,'NREG',NREG,'NPAIR',
+./intgrt.F:534:      IF(NXTLEN.LE.isernb)THEN
+./intgrt.F:540:*         call xbpred(NREG,1,NXTLEN,NXTLST)
+./intgrt.F:546:         call IRR_SIMD_FIRR_VEC(TIME,NXTLEN,NXTLST,FIRR_SIMD,FD_SIMD,
+./intgrt.F:562:         CALL NBINT(TIME,NXTLEN,NXTLST,X,XDOT,BODY,FIRR_SIMD,FD_SIMD,
+./intgrt.F:569:!$omp parallel do if(NXTLEN.GE.ITHREAD) private(L,I)
+./intgrt.F:570:         DO L = 1,NXTLEN
+./intgrt.F:578:!$omp parallel do if(NXTLEN.GE.ITHREAD) private(L,I,DTR)
+./intgrt.F:579:         DO L = 1,NXTLEN
+./intgrt.F:623:           ishift = MOD(NXTLEN,isize)
+./intgrt.F:624:           idivide = NXTLEN / isize
+./intgrt.F:631:           nl = NXTLEN
+./intgrt.F:650:*     print*,' rank ',rank,' NXTLEN ',NXTLEN,TIME,
+./intgrt.F:833:           call encounter_record(NXTLEN,NXTLST)
+./intgrt.F:838:c$$$**!$omp parallel do if(NXTLEN.GE.ithread)
+./intgrt.F:840:c$$$        DO L = 1,NXTLEN
+./intgrt.F:876:        DO L = 1, NXTLEN
+./intgrt.F:931:      NSTEPI = NSTEPI + NXTLEN
+./intgrt.F:948:c$$$      if(rank.eq.0) print*,'NREG',NXTLEN,NREG,TIME,NGPUC,tt52-tt51
+./intgrt.F:1294:      DO L = 1,NXTLEN
+./intgrt.F:1308:         call custom_output(NXTLEN,NXTLST,NXTLIMIT,NGHOSTS,IMINR)
+./intgrt.F:1312:         call star_trace(NXTLEN,NXTLST)
+./intgrt.F:1453:      NTIMER = NTIMER + NXTLEN
+./mydump.F:144:        write (J) NXTLIMIT,NGHOSTS,NXTLST(1:NXTLIMIT+NGHOSTS),NXTLEN,
+./mydump.F:285:        read (J) NXTLIMIT,NGHOSTS,NXTLST(1:NXTLIMIT+NGHOSTS),NXTLEN,
+./mydump.F:425:       CALL MPI_BCAST(NXTLEN,1,MPI_INTEGER,0,MPI_COMM_WORLD,ierr)
+./nbint.F:1:      SUBROUTINE NBINT(TIME,NXTLEN,NXTLST,X,XDOT,BODY,
+./nbint.F:11:      INTEGER NXTLST(NMAX),NXTLEN,LIST(LMAX,NMAX),IMINR(NMAX)
+./nbint.F:20:      DO II = 1, NXTLEN
+./next_tlist.f:37:      NXTLEN = NDTK(NXTLEVEL)
+./sort_tlist.f:79:*     Only sorting before NXTLEN (NXTLEVEL), be careful not update NXTLEVEL earlier than sort
+./star_trace.f:1:      subroutine star_trace(NXTLEN,NXTLST)
+./star_trace.f:11:      INTEGER NXTLST(NMAX),NXTLEN
+./star_trace.f:45:      DO J = 1, NXTLEN
+./outlist:965:./nbint.F:11:      INTEGER NXTLST(NMAX),NXTLEN,LIST(LMAX,NMAX),IMINR(NMAX)
